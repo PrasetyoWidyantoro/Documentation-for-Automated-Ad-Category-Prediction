@@ -115,6 +115,7 @@ Subsequently, we can perform further analysis related to this information to und
 ### Exploratory Data Analysis (EDA)
 
 **Exploratory Data Analysis (EDA) Architecture Diagram**
+
 ![2_multiclass_EDA](docs/docs/images/2_multiclass_EDA.png)
 
 Next is the Exploratory Data Analysis (EDA) phase. In this stage, exploration of the data is conducted to gain a deeper understanding. The process includes several steps. Firstly, Basic Text Exploration is performed, such as finding the "heading" with the longest and shortest names, examining products with titles containing specific characteristics, searching for rows containing punctuation or special characters, and finding rows with multiple spaces in the title column. Secondly, Data Proportion analysis is carried out by checking the proportion of data in terms of both the count and percentage of target labels. Thirdly, Text Representation involves representing words in text data. Lastly, a WordCloud is generated to visualize word frequency.
@@ -122,6 +123,7 @@ Next is the Exploratory Data Analysis (EDA) phase. In this stage, exploration of
 ### Data Preprocessing
 
 **Data Preprocessing Architecture**
+
 ![3_multiclass_preproc](docs/docs/images/3_multiclass_preproc.png)
 
 Moving on to the Data Preprocessing stage, the initial step after reading the data prepared in the Data Preparation phase is the execution of post-EDA (Mandatory from EDA) actions. This includes operations such as removing special characters, converting text to lowercase, removing stopwords, and joining the words with a single space. Following this, the data is transformed using TFIDF to assign weights to unique and important words in a document, differentiating one document from another. Additionally, label encoding is applied to the target data with the following mapping: activities -> 0, appliances -> 1, artists -> 2, automotive -> 3, cell-phones -> 4, childcare -> 5, general -> 6, household-services -> 7, housing -> 8, photography -> 9, real-estate -> 10, shared -> 11, temporary -> 12, therapeutic -> 13, video-games -> 14, wanted-housing -> 15. After completing these processes, the data is saved.
@@ -129,6 +131,7 @@ Moving on to the Data Preprocessing stage, the initial step after reading the da
 ### Data Modeling
 
 **Data Modeling Architecture**
+
 ![4_multiclass_modeling](docs/docs/images/4_multiclass_modeling.png)
 
 Once the data from the preprocessing stage is saved, it is loaded into the data modeling phase. Subsequently, the data undergoes the modeling process with experiments using various models such as extratrees, xgboost, gradient boosting, SVC, logistic regression, lightgbm, and deep learning. However, the best results, with the optimal evaluation metric values, are obtained using the deep learning model, achieving a Test recall of 0.86.
