@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="predict the category of each post published on the Craigslist classified ads platform." /><meta name="author" content="Prasetyo Widyantoro" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Home - Craigslist Post Category Prediction</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "DOKUMENTASI";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> Home - Craigslist Post Category Prediction
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">DOKUMENTASI</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#business-problem">Business Problem</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#business-objective">Business Objective</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#machine-learning-solution">Machine Learning Solution</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#machine-learning-metrics">Machine Learning Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#literature-review">Literature Review</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#end-to-end-machine-learning-process">End-to-End Machine Learning Process</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#data-preparation">Data Preparation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dataset-definition">Dataset Definition</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-preprocessing">Data Preprocessing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-modeling">Data Modeling</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#neural-network-architecture">Neural Network Architecture:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#machine-learning-services-architecture">Machine Learning Services Architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-craigslist-post-category-prediction-with-docker">Setting Up "Craigslist Post Category Prediction" with Docker</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-service">Docker Service</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#further-research">Further Research</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="about/">TENTANG SAYA</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">Home - Craigslist Post Category Prediction</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">DOKUMENTASI</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="craigslist-post-category-prediction">Craigslist Post Category Prediction</h1>
+<h2 id="business-problem">Business Problem</h2>
+<p>In the ever-expanding realm of online classifieds, the Craigslist Post Category Prediction project is dedicated to foreseeing the category assignment for every post published on the Craigslist platform. The primary objective is to navigate the challenge of accurately categorizing each post, ensuring that it seamlessly aligns with the essence of its content.</p>
+<p>The significance lies in the precision of categorization; it's pivotal that each post finds its place in a category that genuinely captures its nature. The ultimate aim is to enhance user experience by providing a system that effectively organizes posts based on their content, making it easier for users to locate and engage with relevant listings. The success of this project is measured by its ability to streamline the categorization process, offering users a seamless and intuitive platform for exploring Craigslist classified ads.</p>
+<h2 id="business-objective">Business Objective</h2>
+<p>The primary business objective of the Craigslist Post Category Prediction project is to develop a robust predictive model capable of accurately categorizing each post on the Craigslist classified ads platform. The focal point is to address the challenge of ensuring that every post is assigned to a category that impeccably represents its content. By achieving this objective, the business aims to enhance the efficiency of content organization on the platform, providing users with a more intuitive and user-friendly experience. The ultimate goal is to optimize user satisfaction and engagement by delivering a precise and effective categorization system for Craigslist classified ads.</p>
+<h2 id="machine-learning-solution">Machine Learning Solution</h2>
+<p>In crafting a machine learning solution for the Craigslist Post Category Prediction, the journey commenced with the exploration of various models, ultimately leading to the identification of the optimal one— a sophisticated deep learning neural network. The program strategically unfolds through a sequence of pivotal steps, with a strong emphasis on data processing and feature engineering.</p>
+<p>As a critical prelude, incoming product data undergoes meticulous preparation to align with the classification process. This involves the cleansing of text from special characters, converting letters to lowercase, and eliminating irrelevant words. Subsequently, the extraction of pertinent features from the product text takes place, leveraging techniques such as vectorization (e.g., TF-IDF). This transformative process converts text into numerical representations, facilitating their utilization by the chosen neural network model.</p>
+<p>The focal point of prediction within the model is the 'category' column, where each distinct category is mapped to a numerical value. The mapping includes:</p>
+<ul>
+<li>activities -&gt; 0</li>
+<li>appliances -&gt; 1</li>
+<li>artists -&gt; 2</li>
+<li>automotive -&gt; 3</li>
+<li>cell-phones -&gt; 4</li>
+<li>childcare -&gt; 5</li>
+<li>general -&gt; 6</li>
+<li>household-services -&gt; 7</li>
+<li>housing -&gt; 8</li>
+<li>photography -&gt; 9</li>
+<li>real-estate -&gt; 10</li>
+<li>shared -&gt; 11</li>
+<li>temporary -&gt; 12</li>
+<li>therapeutic -&gt; 13</li>
+<li>video-games -&gt; 14</li>
+<li>wanted-housing -&gt; 15</li>
+</ul>
+<p>By integrating these components, the machine learning solution endeavors to effectively predict and assign accurate categories to each post on the Craigslist classified ads platform, ensuring a robust and efficient classification system for enhanced user experience and satisfaction.</p>
+<h2 id="machine-learning-metrics">Machine Learning Metrics</h2>
+<p>The <code>Craigslist Post Category Prediction</code> system, leveraging a Multi-class Classification model, serves as a robust data analysis tool designed to identify the categories of posts on the Craigslist classified ads platform based on their provided descriptions. This dataset encompasses information from posts on the online platform, with the target variable being the class variable (product category), reflecting the most suitable category for each product. Feature variables are employed to process and predict the most relevant product categories for each post description.</p>
+<p>In this context, the primary focus lies on the business metric - <code>recall</code>. <code>Recall</code> in this scenario prioritizes the model's ability to accurately predict the correct product category over minimizing false predictions. This implies that the model strives to minimize the number of products genuinely belonging to a specific category but predicted as another category (False Negative) while maximizing the number of products correctly predicted into their corresponding categories (True Positive). Although this may reduce the number of products genuinely not belonging to a particular category predicted as such (False Positive), the primary emphasis remains on ensuring that products genuinely belonging to a category are well-detected.</p>
+<p>Thus, the NLP model employed in the Craigslist Post Category Prediction task will be optimized to achieve a high recall value. This optimization aims to enhance the accuracy of product classification into the appropriate categories, reducing the likelihood of overlooking or misclassifying products.</p>
+<h2 id="literature-review">Literature Review</h2>
+<p><strong>Multiclass Classification Model Based on the Combination of IndoBERT Embedding and Long Short-Term Memory for Indonesian-language Tweets</strong></p>
+<p>The combination of pre-trained IndoBERT and Long Short-Term Memory (LSTM) yields superior classification results, both on the original and modified datasets. The IndoBERT-LSTM model with optimal hyperparameters (batch size 16, learning rate 2e-5, and average pooling) achieves an F1-score of 98.90% on the original dataset and 92.83% on the modified dataset. The performance improvement of IndoBERT-LSTM over fine-tuned IndoBERT is not significantly pronounced (Iskandar Zulkarnain Maulana Putra et al., 2022).</p>
+<p><strong>Multi-Class Text Classification of Uzbek News Articles using Machine Learning</strong></p>
+<p>In this study, multiclass text classification is applied to texts written in the Uzbek language, specifically news articles from ten categories selected from the Uzbek online news edition "Daryo." Six different machine learning algorithms—Support Vector Machine (SVM), Decision Tree (DTC), Random Forest (RF), Logistic Regression (LR), and Naïve Bayes Multinomial (MNB)—are employed for multiclass text classification. TF-IDF algorithm and n-gram models at the word and character levels are utilized as feature extraction methods. The hyperparameter determination for text classification involves 5-fold cross-validation. Experimental results show the highest accuracy reaching 86.88% (Rabbimov &amp; Kobilov, 2020).</p>
+<p><strong>Building Multiclass Classification Model of Logistic Regression and Decision Tree Using the Chi-Square Test for Variable Selection Method.</strong></p>
+<p>Feature selection using a filter approach indicates that all predictor features depend on the target feature. Independent predictor features include the mother's pre-pregnancy diabetes history (X2), father's blood pressure (X3), father's psychological condition (X8), and drinking water quality (X10). These features serve as inputs to the classification model. The class label distribution in the dataset is imbalanced, with Class 0 dominating around 70% of Class 0 examples, while there are only 0.33% or 3 out of 900 Class 1 examples. This class label distribution imbalance can affect the acquisition of a better classification model. The Decision Tree model outperforms the Logistic Regression model. Performance metrics, including Accuracy, precision, recall, and F1-score, are 90%, 89%, 90%, and 89%, respectively, for Logistic Regression compared to 91%, 90%, 91%, and 90% for the Decision Tree model. Additionally, the Decision Tree model can demonstrate the importance of features in the separation process during model construction (Nugroho et al., 2022).</p>
+<h2 id="end-to-end-machine-learning-process">End-to-End Machine Learning Process</h2>
+<p>The process will encompass data preparation, Exploratory Data Analysis (EDA), Data Preprocessing, Data Modeling, and culminate in a Machine Learning Service using APIs. The entire system will be integrated into a Streamlit application with Docker for containerization, and the deployment will be facilitated through the Streamlit Share server.</p>
+<h3 id="data-preparation">Data Preparation</h3>
+<p><strong>Data Preparation Architecture Diagram</strong>
+<img alt="1_multiclass_prep" src="images/1_multiclass_prep.png" /></p>
+<p>The data preparation process begins with reading raw data, followed by the definition of columns to be processed. This includes data validation, specifically checking data types, identifying duplicate data, and splitting the data into training, validation, and test sets. Finally, the processed data is saved before proceeding to the data preprocessing stage.</p>
+<h4 id="dataset-definition">Dataset Definition</h4>
+<p>The data used in this analysis includes information about various services, community activities, and properties advertised on the Craigslist e-commerce platform. The dataset contains information from sixteen different cities. Here is a summary of the dataset:</p>
+<p>Data Source: Craigslist</p>
+<p>The dataset consists of 20,217 rows with four main columns:</p>
+<ol>
+<li><strong>city</strong>: This column includes the name of the city where the advertisement is posted.</li>
+<li><strong>category</strong>: This column contains the category or classification of the advertisement, reflecting the type of service, item, or property offered.</li>
+<li><strong>section</strong>: This column indicates the section of the Craigslist platform where the advertisement is posted, such as services, community, housing, or for-sale.</li>
+<li><strong>heading</strong>: This column contains the title or a brief description of the advertisement, providing an overview of the services, items, or properties offered.</li>
+</ol>
+<p>Subsequently, we can perform further analysis related to this information to understand trends and patterns on the Craigslist platform.</p>
+<h3 id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h3>
+<p><strong>Exploratory Data Analysis (EDA) Architecture Diagram</strong>
+<img alt="2_multiclass_EDA" src="images/2_multiclass_EDA.png" /></p>
+<p>Next is the Exploratory Data Analysis (EDA) phase. In this stage, exploration of the data is conducted to gain a deeper understanding. The process includes several steps. Firstly, Basic Text Exploration is performed, such as finding the "heading" with the longest and shortest names, examining products with titles containing specific characteristics, searching for rows containing punctuation or special characters, and finding rows with multiple spaces in the title column. Secondly, Data Proportion analysis is carried out by checking the proportion of data in terms of both the count and percentage of target labels. Thirdly, Text Representation involves representing words in text data. Lastly, a WordCloud is generated to visualize word frequency.</p>
+<h3 id="data-preprocessing">Data Preprocessing</h3>
+<p><strong>Data Preprocessing Architecture</strong>
+<img alt="3_multiclass_preproc" src="images/3_multiclass_preproc.png" /></p>
+<p>Moving on to the Data Preprocessing stage, the initial step after reading the data prepared in the Data Preparation phase is the execution of post-EDA (Mandatory from EDA) actions. This includes operations such as removing special characters, converting text to lowercase, removing stopwords, and joining the words with a single space. Following this, the data is transformed using TFIDF to assign weights to unique and important words in a document, differentiating one document from another. Additionally, label encoding is applied to the target data with the following mapping: activities -&gt; 0, appliances -&gt; 1, artists -&gt; 2, automotive -&gt; 3, cell-phones -&gt; 4, childcare -&gt; 5, general -&gt; 6, household-services -&gt; 7, housing -&gt; 8, photography -&gt; 9, real-estate -&gt; 10, shared -&gt; 11, temporary -&gt; 12, therapeutic -&gt; 13, video-games -&gt; 14, wanted-housing -&gt; 15. After completing these processes, the data is saved.</p>
+<h3 id="data-modeling">Data Modeling</h3>
+<p><strong>Data Modeling Architecture</strong>
+<img alt="4_multiclass_modeling" src="images/4_multiclass_modeling.png" /></p>
+<p>Once the data from the preprocessing stage is saved, it is loaded into the data modeling phase. Subsequently, the data undergoes the modeling process with experiments using various models such as extratrees, xgboost, gradient boosting, SVC, logistic regression, lightgbm, and deep learning. However, the best results, with the optimal evaluation metric values, are obtained using the deep learning model, achieving a Test recall of 0.86.</p>
+<h2 id="neural-network-architecture"><strong>Neural Network Architecture:</strong></h2>
+<p>The neural network is named <code>AdvancedNN</code>, designed for a classification problem. It consists of an input layer, a hidden layer with 256 neurons using the ReLU activation function, a dropout layer for regularization, and an output layer. The model's architecture is crucial in capturing complex patterns in the input data.</p>
+<p><strong>Model Initialization and Optimization:</strong>
+The model is initialized with the specified architecture. The chosen loss function is CrossEntropyLoss, suitable for multi-class classification tasks. The Adam optimizer is used to update the model parameters, and a learning rate of 0.001 is set. Additionally, a learning rate scheduler (ReduceLROnPlateau) is employed to adjust the learning rate dynamically during training based on the model's performance on the validation set.</p>
+<p><strong>Training Process:</strong>
+The training process involves iterating through the dataset for a specified number of epochs (50 in this case). During each epoch, the model is trained on the training dataset using backpropagation to minimize the defined loss. The Adam optimizer updates the model's parameters. The training loop also includes a validation step to assess the model's performance on a separate validation dataset.</p>
+<p><strong>Early Stopping:</strong>
+To prevent overfitting, an early stopping mechanism is implemented. The validation loss is monitored during training, and if no improvement is observed for a predefined number of epochs (5 in this case), the training is halted early. The best-performing model is saved, ensuring that the model with the lowest validation loss is retained.</p>
+<p><strong>Theoretical Explanation:</strong>
+- <strong>Neural Network Architecture:</strong> The neural network architecture follows a standard feedforward design. The ReLU activation function introduces non-linearity to capture complex relationships within the data. The dropout layer helps prevent overfitting by randomly setting a fraction of input units to zero during training.</p>
+<ul>
+<li>
+<p><strong>Loss Function and Optimization:</strong> CrossEntropyLoss is commonly used for multi-class classification as it measures the dissimilarity between predicted and actual class distributions. The Adam optimizer efficiently adjusts the model's weights to minimize this loss.</p>
+</li>
+<li>
+<p><strong>Training Loop:</strong> The model is trained iteratively on batches of data. The learning rate scheduler adjusts the learning rate based on the model's performance on the validation set, allowing for better convergence.</p>
+</li>
+<li>
+<p><strong>Early Stopping:</strong> Early stopping is a regularization technique that halts training when the model's performance on the validation set ceases to improve. This prevents the model from becoming overly specialized to the training data and enhances generalization to unseen data.</p>
+</li>
+</ul>
+<p>In summary, the provided code implements a robust training framework for an ANN, incorporating architectural choices, optimization strategies, and regularization techniques to achieve accurate and generalizable results.</p>
+<p><strong>Classification Report</strong></p>
+<p><img alt="Modeling_3_Classification_Report" src="images/Modeling_3_Classification_Report.png" /></p>
+<h2 id="machine-learning-services-architecture">Machine Learning Services Architecture</h2>
+<p><img alt="5_multiclass_mlservice" src="images/5_multiclass_mlservice.png" /></p>
+<ul>
+<li>
+<p>The machine learning service process begins with user input, where the provided data is converted into a Pandas dataframe. The input data undergoes a data defense process to ensure compatibility with the pre-trained model. Subsequently, special characters are removed, and the text is converted to lowercase. Stopwords are then removed, and the remaining words are joined with a single space. The cleansed data undergoes transformation using TFIDF, and finally, predictions are made using the pre-trained model saved during the data modeling phase.</p>
+</li>
+<li>
+<p>During the prediction phase, users input data through the Streamlit web interface, serving as the front end of the application. Upon the user's click on "Predict," the data is sent as a request to the back end. The back end processes the request and responds with the prediction results to the user.</p>
+</li>
+<li>
+<p>This architecture ensures a seamless interaction between the user interface, data preprocessing, and model prediction, providing an end-to-end machine learning service for efficient and user-friendly predictions. The API framework employed in the Machine Learning Service process is FASTAPI, and the front end utilizes Streamlit.</p>
+</li>
+<li>
+<p>Following the various processes and saving the model, the next step involves deployment using API and Streamlit. The image below provides an example of accessing ML Services through FASTAPI Swagger UI.</p>
+</li>
+</ul>
+<p>Here is an example of input data used to access the API:</p>
+<p><strong>Prediction using API with FASTAPI</strong></p>
+<p><img alt="API_1_FastApi" src="images/API_1_FastApi.png" /></p>
+<ul>
+<li>This demonstrates the seamless interaction between the user interface, data preprocessing, model prediction, and the API, providing a user-friendly and accessible method for making predictions. To enhance user-friendliness and provide a more powerful interface, users are presented with a simple application built using Streamlit services. Here's an example of how it can be utilized.</li>
+</ul>
+<p><strong>Prediction using provided form</strong></p>
+<p><img alt="ML_Service_1_Streamlit" src="images/ML_Service_1_Streamlit.png" /></p>
+<p><strong>Prediction using JSON file</strong></p>
+<p><img alt="ML_Service_2_Streamlit" src="images/ML_Service_2_Streamlit.png" /></p>
+<h2 id="setting-up-craigslist-post-category-prediction-with-docker">Setting Up "Craigslist Post Category Prediction" with Docker</h2>
+<p>To set up the "Craigslist Post Category Prediction" using Docker, follow these steps:</p>
+<ol>
+<li>Ensure that you have cloned the repository for this program.</li>
+<li>Install a virtual environment.</li>
+<li>Activate the created virtual environment.</li>
+<li>Install the required packages listed in <code>requirements.txt</code> by executing:
+   <code>pip install -r requirements.txt</code></li>
+<li>Make sure Docker is activated and that you are logged in.</li>
+<li>Run the following script in the terminal with the activated virtual environment:
+   <code>docker compose up -d --build</code></li>
+<li>The "Craigslist Post Category Prediction" Machine Learning Service is now ready for use.</li>
+<li>Access the API documentation at <a href="http://localhost:8080/docs">http://localhost:8080/docs</a> and the UI Front End (Streamlit) at <a href="http://localhost:8501">http://localhost:8501</a>.</li>
+</ol>
+<h3 id="docker-service">Docker Service</h3>
+<p>The following are the results of inputting the service into a Docker container:
+<img alt="Docker_Container" src="images/Docker_Container.png" /></p>
+<p>The following are the results of inputting the service into:</p>
+<p><img alt="Docker_Image" src="images/Docker_Image.png" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>After thorough experimentation, the deep learning neural network emerged as the top-performing model, achieving an impressive recall of 0.86. Notably, the satisfactory results were attained without the need for data augmentation or balancing.</p>
+<p>The Craigslist Post Category Prediction project embodies a comprehensive end-to-end machine learning solution, encompassing vital stages such as data preparation, exploratory data analysis, data preprocessing, data modeling, and machine learning services. The implementation strategically employs a deep learning neural network to predict and categorize posts on the Craigslist platform, placing a strong emphasis on achieving precision in categorization.</p>
+<p>The selected model is fine-tuned to optimize for high recall, ensuring accurate detection of products genuinely belonging to specific categories. The neural network architecture, loss function, optimization strategy, training loop, and early stopping mechanism are meticulously crafted to yield accurate and generalizable results.</p>
+<p>The integration of machine learning services through API and Streamlit provides users with a seamless and user-friendly interface for inputting data and receiving predictions effortlessly. Furthermore, the Dockerization of services using Docker Compose facilitates straightforward deployment and scalability.</p>
+<p>In essence, the Craigslist Post Category Prediction project serves as a testament to the transformative power of machine learning in enhancing user experience. It establishes an efficient and intuitive system for organizing and categorizing classified ads on the Craigslist platform.</p>
+<h2 id="further-research">Further Research</h2>
+<ol>
+<li>
+<p><strong>Exploration with Pre-trained Models:</strong>
+   Conducting further exploration using advanced pre-trained models such as BERT, GPT, and others.</p>
+</li>
+<li>
+<p><strong>Evaluation and Application of Data Balancing Techniques:</strong>
+   Assessing and implementing data balancing techniques like oversampling or undersampling to address class imbalances.</p>
+</li>
+<li>
+<p><strong>Collaboration with Domain Experts:</strong>
+   Involving collaboration with domain experts and stakeholders to ensure the model adds value in relevant contexts.</p>
+</li>
+</ol>
+<p>These proposed steps aim to enhance the model's performance, explore advanced methodologies, and ensure applicability in real-world scenarios through collaborative efforts.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.projectpro.io/article/multi-class-classification-python-example/547?source=post_page-----81975d03e4a3--------------------------------">Multi-Class Classification in Python Example</a></li>
+<li><a href="https://towardsdatascience.com/comprehensive-guide-to-multiclass-classification-with-sklearn-127cc500f362?source=post_page-----81975d03e4a3--------------------------------">Comprehensive Guide to MultiClass Classification with Scikit-Learn</a></li>
+<li><a href="https://www.kaggle.com/code/satishgunjal/binary-multiclass-classification-using-sklearn?source=post_page-----81975d03e4a3--------------------------------#Train-and-Evaluate-a-Binary-Classification-Model">Binary MultiClass Classification using Scikit-Learn</a></li>
+<li><a href="https://builtin.com/machine-learning/multiclass-classification">Understanding Multi-Class Classification</a></li>
+<li>Iskandar Zulkarnain Maulana Putra, T., Farhan Bukhori, A., Ilmu Pengetahuan Alam, dan, &amp; Gadjah Mada, U. (2022). <a href="https://doi.org/10.35912/jisted.v1i1.1509">Model Klasifikasi Berbasis Multiclass Classification dengan Kombinasi Indobert Embedding dan Long Short-Term Memory untuk Tweet Berbahasa Indonesia</a> (Classification Model Based on Multiclass Classification with a Combination of Indobert Embedding and Long Short-Term Memory for Indonesian-language Tweets). <em>Jurnal Ilmu Siber Dan Teknologi Digital (JISTED)</em>, 1(1), 1–28.</li>
+<li>Nugroho, W. H., Handoyo, S., Akri, Y. J., &amp; Sulistyono, A. D. (2022). <a href="https://doi.org/10.55463/issn.1674-2974.49.4.17">Building Multiclass Classification Model of Logistic Regression and Decision Tree Using the Chi-Square Test for Variable Selection Method</a>. <em>Journal of Hunan University Natural Sciences</em>, 49(4), 172–181.</li>
+<li>Rabbimov, I. M., &amp; Kobilov, S. S. (2020). <a href="https://doi.org/10.1088/1742-6596/1546/1/012097">Multi-Class Text Classification of Uzbek News Articles using Machine Learning</a>. <em>Journal of Physics: Conference Series</em>, 1546(1).</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="about/" class="btn btn-neutral float-right" title="TENTANG SAYA">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Prasetyowidyantoro12@2024</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2024-02-27 06:34:41.710279+00:00
+-->
