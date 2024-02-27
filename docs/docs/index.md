@@ -1,5 +1,11 @@
 # Craigslist Post Category Prediction
 
+## Important Links Related to Craigslist Post Category Prediction
+
+Craigslist Post Category Prediction App: [https://ai-based-post-categorization-prasetyo-widyantoro.streamlit.app/](https://ai-based-post-categorization-prasetyo-widyantoro.streamlit.app/)
+
+Project Documentation: [https://prasetyowidyantoro.github.io/Documentation-for-Automated-Ad-Category-Prediction/](https://prasetyowidyantoro.github.io/Documentation-for-Automated-Ad-Category-Prediction/)
+
 ## Business Problem
 
 In the ever-expanding realm of online classifieds, the Craigslist Post Category Prediction project is dedicated to foreseeing the category assignment for every post published on the Craigslist platform. The primary objective is to navigate the challenge of accurately categorizing each post, ensuring that it seamlessly aligns with the essence of its content.
