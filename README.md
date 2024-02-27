@@ -1,5 +1,11 @@
 # Craigslist Post Category Prediction
 
+## Important Links Related to Craigslist Post Category Prediction
+
+Craigslist Post Category Prediction App: [https://ai-based-post-categorization-prasetyo-widyantoro.streamlit.app/](https://ai-based-post-categorization-prasetyo-widyantoro.streamlit.app/)
+
+Project Documentation: [https://prasetyowidyantoro.github.io/Documentation-for-Automated-Ad-Category-Prediction/](https://prasetyowidyantoro.github.io/Documentation-for-Automated-Ad-Category-Prediction/)
+
 
 ==============================
 
