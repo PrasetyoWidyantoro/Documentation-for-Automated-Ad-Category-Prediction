@@ -1,0 +1,9 @@
+site_name: Home - Craigslist Post Category Prediction
+site_description: predict the category of each post published on the Craigslist classified ads platform.
+site_author: Prasetyo Widyantoro
+copyright: Prasetyowidyantoro12@2024
+nav:
+  - DOKUMENTASI: index.md
+  - TENTANG SAYA: about.md
+theme: 
+  name: readthedocs
